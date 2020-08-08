@@ -4,6 +4,7 @@ import { MDBContainer } from 'mdbreact'
 import { Link } from 'react-router-dom';
 import './AddPatient.css';
 
+
 export class AddPatient extends Component {
 
     constructor(props) {
