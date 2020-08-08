@@ -1,0 +1,15 @@
+.gapDiv {
+    height: 20px;
+}
+
+#rememberMeCheckbox{
+    width: 24px;
+    height: 18px;
+}
+#rememberMeCheckboxDiv{
+  margin-top: 11px;
+}
+#rememberMeLabel{
+  margin-top: -27px;
+  margin-left: 29px;
+}

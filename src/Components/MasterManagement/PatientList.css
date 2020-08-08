@@ -1,0 +1,33 @@
+#dataTable
+{
+  width: 480px;
+  display: flex;
+  border: solid 1px;
+}
+#dataTable td
+{
+  width: 120px;
+  background-color: rgba(57, 57, 58, 0.089);
+}
+.blankDiv
+{
+    width: 30px;
+}
+tr:nth-child(even) {background: rgb(233, 234, 241)}
+tr:nth-child(odd) {background: rgb(190, 188, 202)}
+
+#wrapper{
+    display: flex;
+    /* height: 100px; */
+    /* background-color: rgba(255,0,0,0.1); */
+    border: solid 1px;
+    width: 480px;
+   
+  }
+  
+  #wrapper div {
+    width: 120px;
+    background-color: rgba(57, 57, 58, 0.089);
+    font-weight: bold;
+   
+  } 
