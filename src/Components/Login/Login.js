@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { FormInput } from '../SharedServices/Generics/InputElement';
-import { ServiceUrl } from '../SharedServices/Constant/ServicesUrl';
-import { Services } from '../SharedServices/Services';
-import { Label, NavLink } from 'reactstrap';
-import { useHistory, Link } from "react-router-dom";
+// import { ServiceUrl } from '../SharedServices/Constant/ServicesUrl';
+// import { Services } from '../SharedServices/Services';
+import { NavLink } from 'reactstrap';
+import { Link } from "react-router-dom";
 
 
 
@@ -12,9 +12,8 @@ export class Login extends Component {
     user: {
       username: "",
       password: ""
-    },
-    errors: {},
-    submitted: false
+    }
+
   };
 
   handleChange = event => {
@@ -23,24 +22,25 @@ export class Login extends Component {
     this.setState({ user });
   };
 
-  onSubmit(e) {
-    e.preventDefault();
+  onSubmit = e => {
 
-    //const { username, password } = this.state;
-    //const { history } = this.props;
+    const { user: { username, password } } = this.state;
+    let errors = {};
+    let formIsValid = true;
 
-    //this.setState({ error: false });
+    if (!(this.state.user.username === 'admin' && this.state.user.password === 'admin')) {
+      formIsValid = false;
+      alert('invalid credentials');
+    }
 
-    // if (!(username === 'george' && password === 'foreman')) {
-    //   return this.setState({ error: true });
-    // }
-
-    //store.set('loggedIn', true);
-    //history.push('/Home');
+    if (formIsValid) {
+      // store.set('loggedIn', true);
+      this.props.history.push('/Home');
+    }
   }
 
   render() {
-    const { submitted, errors, user: { username, password } } = this.state;
+    const { errors, user: { username, password } } = this.state;
     return (
       <div className="Container">
         <React.Fragment>
@@ -56,7 +56,7 @@ export class Login extends Component {
                 type="text"
                 value={username}
                 onChange={this.handleChange}
-                error={errors.username}
+                // error={errors.username}
                 required
                 className="col-sm-12"
 
@@ -73,7 +73,7 @@ export class Login extends Component {
                 type="password"
                 value={password}
                 onChange={this.handleChange}
-                error={errors.password}
+                // error={errors.password}
                 required
                 className="col-sm-12"
               />
@@ -88,13 +88,13 @@ export class Login extends Component {
             </div>
             <div className="col-sm-12">
               <div className="col-sm-2">
-                {/* <button type="button">Log In</button> </div> */}
-                <NavLink tag={Link} to="./Home" className="btn btn-info">Log In</NavLink>
-              </div>
+                <button type="button" className="btn btn-info" onClick={this.onSubmit}>Log In</button> </div>
+              {/* <NavLink tag={Link} to="./Home" className="btn btn-info">Log In</NavLink> */}
+
             </div>
           </div>
         </React.Fragment>
-      </div>
+      </div >
     );
   }
 }

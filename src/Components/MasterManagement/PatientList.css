@@ -1,6 +1,6 @@
 #dataTable
 {
-  width: 480px;
+  width: 600px;
   display: flex;
   border: solid 1px;
 }
@@ -21,7 +21,7 @@ tr:nth-child(odd) {background: rgb(190, 188, 202)}
     /* height: 100px; */
     /* background-color: rgba(255,0,0,0.1); */
     border: solid 1px;
-    width: 480px;
+    width: 600px;
    
   }
   
